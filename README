@@ -1,0 +1,37 @@
+Install tmux:
+  sudo apt-get install tmux
+
+Setup tmux:
+  git clone https://github.com/anandneeli/settings.git
+  cd settings
+  #copy files to home directory
+  cp -r .tmux ~/
+  cp .tmux.conf ~/.
+  #With this config files Ctrl+a is set as your prefix key
+
+Creating a tmux session
+  # /tmp/tmux_session_1 is session-data file
+  tmux -S /tmp/tmux_session_1 new -s shared
+  #to detach from session press ctrl+a+d (dont exit)
+  
+Attach to tmux session: 
+  tmux -S /tmp/tmux_session_1 attach -t shared
+Detach from session:
+  prefix + d
+  
+Make tmux session shared 
+  # /tmp/tmux_session_1 is session-data file
+  chmod 777  /tmp/tmux_session_1
+
+With this Ctrl+a is set as your prefix key
+tmux commands:
+window commands:
+prefix + c   - create window
+prefix + ,   - name window
+prefix + (1,2,3 or n)  - Switch to window
+
+Pane commands:
+prefix + %   - vertical split
+prefix + "   - horizontal split
+prefix + z   - zoom-in/zoon-out pane
+prefix + (arrows keys)  - to change pane
