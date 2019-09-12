@@ -9,6 +9,10 @@ alias xterm='xterm -sl 20000 -geometry 70×30+100+40 -fn 9x15'
 #*-fixed-*-*-*-20-*'
 alias tree=~/bin/tree.linux
 
+smom() {
+    mv build.output build.output.old
+    sb make -j21 2>&1 | tee build.output ; tail -n 100 build.output | mailx -s "build.output" aneeli@juniper.net
+}
 
 
 gitdiffroot() {
